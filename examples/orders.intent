@@ -1,0 +1,72 @@
+name: orders
+description: Order management with an approval workflow
+version: 1
+
+entities:
+  - name: Country
+    kind: setting
+    description: Country reference data
+    fields:
+      - { name: id,    type: integer, primaryKey: true, generated: true }
+      - { name: name,  type: string,  required: true, length: 100 }
+      - { name: code2, type: string,  length: 2 }
+
+  - name: Customer
+    fields:
+      - { name: id,          type: integer, primaryKey: true, generated: true }
+      - { name: name,        type: string,  required: true, length: 200 }
+      - { name: active,      type: boolean, defaultValue: "true" }
+      - { name: creditLimit, type: decimal }
+      - { name: orderCount,  type: integer }
+    relations:
+      - { name: country, kind: manyToOne, to: Country }
+      - { name: orders,  kind: oneToMany, to: Order }
+
+  - name: Order
+    fields:
+      - { name: id,        type: integer, primaryKey: true, generated: true }
+      - { name: orderDate, type: date,    required: true }
+      - { name: total,     type: decimal }
+    relations:
+      - { name: customer, kind: manyToOne, to: Customer }
+      - { name: items,    kind: oneToMany, to: OrderItem }
+
+  - name: OrderItem
+    fields:
+      - { name: id,       type: integer, primaryKey: true, generated: true }
+      - { name: quantity, type: integer, required: true }
+    relations:
+      - { name: order, kind: manyToOne, to: Order, composition: true }
+
+processes:
+  - name: OrderApproval
+    trigger: { onCreate: Order }
+    steps:
+      - { name: managerReview,  kind: userTask, args: { assignee: manager, form: ApproveOrder } }
+      - { name: bigOrder,       kind: decision, args: { if: "customer.creditLimit > 10000", then: cfoReview, else: notifyCustomer } }
+      - { name: cfoReview,      kind: userTask, args: { assignee: cfo, form: ApproveOrder } }
+      - { name: notifyCustomer, kind: serviceTask }
+      - { name: done,           kind: end }
+
+forms:
+  - name: ApproveOrder
+    forEntity: Order
+    fields: [orderDate, total]
+    actions: [approve, reject]
+
+reports:
+  - name: OrdersByCustomer
+    source: Order
+    dimensions: [customer]
+    measures: ["count(*)", "sum(total)"]
+
+permissions:
+  - { role: Sales,   can: [Customer:read, Order:create] }
+  - { role: Manager, can: [Order:approve] }
+
+seeds:
+  - name: countries
+    entity: Country
+    rows:
+      - { id: 1, name: Afghanistan, code2: AF }
+      - { id: 2, name: Albania,     code2: AL }
