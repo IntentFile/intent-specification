@@ -124,8 +124,10 @@ the source: the generator writes it and also uses it to skip an event whose rows
 - An aggregate over a `sensitive` field is itself sensitive wherever its target entity is personally
   scoped - otherwise hiding the leaf value and publishing its total would be a distinction without a
   difference.
-- Not yet specified: recomputing the tuple a source row LEFT when a grouping key is edited.
-  Append-only sources are unaffected; the limitation is listed under *Planned*.
+- Moving a source row between tuples (editing a grouping key) repairs BOTH tuples: the one it
+  joined and the one it left. Since the previous keys are unrecoverable after the write, a
+  conforming generator must observe them before it. A tuple whose last row leaves keeps a zero
+  total rather than disappearing.
 
 ## Prior art / workarounds
 
