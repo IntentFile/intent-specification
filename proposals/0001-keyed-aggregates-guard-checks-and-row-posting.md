@@ -112,6 +112,10 @@ the source: the generator writes it and also uses it to skip an event whose rows
 
 - Every `by` name must be a to-one relation of both `of` and `into`; `into` is keyed by the same
   relations as the source groups by.
+- A roll-up's parent may be cross-model (its `via` relation names a `uses` model): the child stays
+  local because it owns the event, and the parent field is validated against the owner's model at
+  generation time. `capacity` / `balance` / `status` stay local-only - they read the parent's own
+  limit and status values.
 - A guard's `aggregate` must name an aggregate whose `of` is the entity carrying the check.
 - `outcome: task` requires a boolean `marker` field; `outcome: reject` requires `setStatus` and a
   status relation on the entity. A companion attribute belonging to another outcome is an authoring
