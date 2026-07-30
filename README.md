@@ -19,7 +19,7 @@ manifesto — is published at **[intentfile.org](https://intentfile.org)** (sour
 | Version | Status |
 | --- | --- |
 | [1.0](versions/1.0.md) | current |
-| [1.1](versions/1.1.md) | proposed - adds `aggregates`, `checks: kind: guard` and `posts` ([proposal](proposals/0001-keyed-aggregates-guard-checks-and-row-posting.md)) |
+| [1.1](versions/1.1.md) | proposed - adds `aggregates`, `checks: kind: guard`, `posts`, `pattern` and header-mediated `dependsOn` ([proposal](proposals/0001-keyed-aggregates-guard-checks-and-row-posting.md)) |
 
 ## Structure
 

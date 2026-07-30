@@ -80,6 +80,35 @@ posts:
       GoodsReceipt: Receipt.Id
 ```
 
+## Field input formats and header-mediated defaults
+
+Two further additions carried by this version, both small and both closing gaps the earlier
+draft left open.
+
+**`pattern` — an authorable input format.** A model can declare uniqueness, a length and a
+required-ness for a field, but not the SHAPE of the value, so an e-mail column accepts any text
+and every model author re-invents the check by hand (or, more often, skips it). `pattern` takes a
+regular expression on a string or text field:
+
+```yaml
+- { name: email, type: string, length: 320, pattern: '^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$' }
+- { name: iban,  type: string, length: 34,  pattern: '^[A-Z]{2}[0-9]{2}[A-Za-z0-9]{11,30}$' }
+```
+
+It is enforced on BOTH layers - the input carries the format and the generated write path
+re-checks it - so a caller reaching the API directly cannot bypass what the form enforces.
+Restricted to string / text fields on purpose: on a numeric field the same attribute already
+means the DISPLAY format, and accepting a regex there would silently corrupt how numbers render.
+
+**`dependsOn` with a header-mediated source.** The existing form copies a value from a record the
+LINE points at. A document line frequently needs to default from the record the HEADER points at
+instead - a discount from the order's customer, a rate from the invoice's contract. Expressed by
+allowing the `relation` to be a two-segment path, `<composition parent>.<parent relation>`:
+
+```yaml
+- { name: discount, type: decimal, dependsOn: { relation: SalesOrder.Customer, valueFrom: standardDiscount } }
+```
+
 ## Expected behaviour
 
 **`aggregates`.** On every create, update and delete of a source row, the target row for that row's
@@ -109,6 +138,19 @@ validations and derived fields all still apply. `idempotentBy` names the target'
 the source: the generator writes it and also uses it to skip an event whose rows already exist.
 
 ## Edge rules
+
+- **`pattern` is a format check, not a semantic one.** It states what a value must LOOK like. Rules
+  that differ per jurisdiction (a national identifier) or that need a checksum (an account number)
+  are NOT expressible as one regular expression, and a model should leave those fields unpatterned
+  rather than encode one country's rule as if it were universal.
+- **A required field that carries a default is not demanded from the caller.** The default supplies
+  the value, so create-time validation that also insists on it in the payload contradicts the
+  declaration and makes the record uncreatable through the API.
+- **A header-mediated `dependsOn` copies once**, when a new line is opened. An existing line is
+  never re-copied, so changing the header later leaves already-entered lines untouched - the copied
+  value is a snapshot, exactly like the one-hop form.
+- The header-mediated form applies to FIELDS only and requires `valueFrom`: there is no option list
+  to narrow, so `filterBy` has no meaning on it.
 
 - Every `by` name must be a to-one relation of both `of` and `into`; `into` is keyed by the same
   relations as the source groups by.
