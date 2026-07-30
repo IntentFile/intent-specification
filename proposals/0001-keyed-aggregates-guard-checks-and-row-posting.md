@@ -151,6 +151,11 @@ the source: the generator writes it and also uses it to skip an event whose rows
   value is a snapshot, exactly like the one-hop form.
 - The header-mediated form applies to FIELDS only and requires `valueFrom`: there is no option list
   to narrow, so `filterBy` has no meaning on it.
+- **A document title without a number series is user-entered**, and the create page must render it
+  as an editable control. The version text now says so next to the `function` roles: the two kinds
+  of title (platform-assigned when paired with `number`, authored otherwise) were previously
+  indistinguishable in the prose, and treating every title as assigned leaves a required field with
+  no way to fill it - the record cannot be created at all.
 
 - Every `by` name must be a to-one relation of both `of` and `into`; `into` is keyed by the same
   relations as the source groups by.
