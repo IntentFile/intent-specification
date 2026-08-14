@@ -1,8 +1,8 @@
 # The scope boundary, and the authoring assistant's honesty
 
-- **Status:** draft
+- **Status:** accepted (1.2)
 - **Issue:** [IntentFile/intent-specification#11](https://github.com/IntentFile/intent-specification/issues/11)
-- **Proposed for:** version 1.1 (see `versions/1.1.md` in this pull request)
+- **Proposed for:** version 1.2 (see `versions/1.2.md`, accepted)
 
 ## The problem
 
