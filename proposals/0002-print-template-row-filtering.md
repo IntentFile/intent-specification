@@ -1,8 +1,8 @@
 # Print-template row filtering (`filter` / `match`)
 
-- **Status:** draft
+- **Status:** accepted (1.2)
 - **Issue:** <!-- link the discussion issue, if any -->
-- **Proposed for:** the printable-documents template language (versions/1.1.md "Printable documents")
+- **Proposed for:** the printable-documents template language (versions/1.2.md "Printable documents", accepted)
 
 ## The problem
 
