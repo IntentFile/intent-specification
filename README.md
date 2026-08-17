@@ -28,19 +28,26 @@ manifesto — is published at **[intentfile.org](https://intentfile.org)** (sour
 
 ```
 versions/     the specification, one file per version - the newest version file is normative (currently versions/1.4.md)
-proposals/    proposals for specification changes, discussed before they are specified
+              written once, at a release, and never edited again
+proposals/    every pending semantic change, in the open, until a release folds it into a version
 examples/     complete example .intent files
 ```
+
+A version document does not change between releases: cite `versions/1.2.md` today and it reads
+the same next month. What the format is *about to* become lives in `proposals/`.
 
 ## Participate
 
 The specification evolves in the open — every change is a pull request against this
 repository:
 
-- **Editorial fixes** (typos, wording, clearer examples): open a PR directly.
-- **Specification changes** (new constructs, changed semantics): start with an
-  [issue](https://github.com/IntentFile/intent-specification/issues/new/choose) or a
-  document under `proposals/`, then a PR once the direction is agreed.
+- **Editorial fixes** (typos, wording, clearer examples): open a PR directly against the
+  current version document.
+- **Specification changes** (new constructs, changed semantics): report the gap as an
+  [issue](https://github.com/IntentFile/intent-specification/issues/new/choose), then open a PR
+  adding a document under `proposals/`. That PR never touches `versions/` — merging it records
+  that the direction is **accepted**, and the change is published when a release folds every
+  accepted proposal into a new version.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full flow and the ground rules
 (vendor-neutrality above all), and [GOVERNANCE.md](GOVERNANCE.md) for how decisions are

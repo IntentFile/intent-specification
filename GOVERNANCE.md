@@ -16,10 +16,12 @@ record of quality contributions.
 ## Decision making
 
 - Day-to-day decisions (editorial merges, issue triage) are made by any maintainer.
-- Specification changes require a converged discussion (issue or proposal) and a
-  maintainer's approval; when maintainers disagree, they resolve it by simple majority.
-- A new specification **version** is cut by maintainer consensus once the accumulated,
-  merged semantic changes warrant it. Released version documents are immutable.
+- Specification changes are decided as **proposals**: a converged discussion on the proposal
+  pull request and a maintainer's approval; when maintainers disagree, they resolve it by
+  simple majority. Merging a proposal records acceptance — it publishes nothing.
+- A new specification **version** is cut by maintainer consensus once the accepted proposals
+  warrant it. The release folds in every accepted proposal and nothing else. Version documents
+  are immutable: a release adds a file and never edits an earlier one.
 
 ## Guiding constraints
 
