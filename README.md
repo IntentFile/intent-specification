@@ -20,7 +20,7 @@ manifesto — is published at **[intentfile.org](https://intentfile.org)** (sour
 | --- | --- |
 | [1.0](versions/1.0.md) | superseded |
 | [1.1](versions/1.1.md) | superseded - added `aggregates`, `checks: kind: guard`, `posts`, the notify block (`attach: print`, `forEach`), `pattern` and header-mediated `dependsOn` ([proposal](proposals/0001-keyed-aggregates-guard-checks-and-row-posting.md)) |
-| [1.2](versions/1.2.md) | current - adds lifecycle stages + report `scope` + status names, `locksWithMaster`, `generates` prompted input, computed lines and event-driven creation, `defaultValue` row seeding, print-template row filtering ([proposal](proposals/0002-print-template-row-filtering.md)), the scope boundary and the authoring assistant's honesty rule ([proposal](proposals/0003-the-scope-boundary.md)), and aligns document numbering with deployed practice |
+| [1.2](versions/1.2.md) | current - adds lifecycle stages + report `scope` + status names, `locksWithMaster`, `generates` prompted input and computed lines, `defaultValue` row seeding, print-template row filtering ([proposal](proposals/0002-print-template-row-filtering.md)), the scope boundary and the authoring assistant's honesty rule ([proposal](proposals/0003-the-scope-boundary.md)), and aligns document numbering with deployed practice |
 
 ## Structure
 
