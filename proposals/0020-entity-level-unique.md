@@ -1,6 +1,6 @@
 # Entity-level unique: a business key over more than one field
 
-- **Status:** draft
+- **Status:** released in [1.5](../versions/1.5.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/27
 - **Reference implementation:** https://github.com/eclipse-dirigible/dirigible/issues/6763
 

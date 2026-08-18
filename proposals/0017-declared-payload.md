@@ -1,7 +1,7 @@
 # A declared payload for outward-facing messages
 
 
-- **Status:** draft
+- **Status:** released in [1.5](../versions/1.5.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6768
 - **Discussion:** https://github.com/IntentFile/intent-specification/pull/31
 

@@ -1,7 +1,7 @@
 # Related registers - the records that reference an entity
 
 
-- **Status:** draft
+- **Status:** released in [1.5](../versions/1.5.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6673
 - **Discussion:** https://github.com/IntentFile/intent-specification/pull/29
 
