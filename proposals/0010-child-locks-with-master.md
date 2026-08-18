@@ -1,7 +1,7 @@
 # An entity's immutability covers the collections composed into it
 
 
-- **Status:** draft
+- **Status:** released in [1.3](../versions/1.3.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6695
 - **Discussion:** https://github.com/IntentFile/intent-specification/pull/19
 
