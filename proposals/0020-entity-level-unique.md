@@ -40,8 +40,9 @@ entities:
 ```
 
 `fields` names fields **or to-one relations** — a relation contributes its foreign-key column, which
-is what a pair like `(tenant, application)` means. The columns are constrained in the declared
-order, and a colliding write is answered as a conflict carrying `message`.
+is what a pair like `(tenant, application)` means. The key is the *combination* of those columns:
+the declared order is how it reads, not which rows collide. A colliding write is answered as a
+conflict carrying `message`.
 
 ## The normative half
 
@@ -93,8 +94,9 @@ entities:
       - { fields: [tenant, application], message: "This application is already provisioned for the tenant" }
 ```
 
-`fields` names fields or to-one relations of the same entity, in the order the key constrains them;
-a to-one relation contributes its foreign-key column. `message` is what a caller is told when a
+`fields` names fields or to-one relations of the same entity; a to-one relation contributes its
+foreign-key column. The key is the combination of those columns - the declared order is how it
+reads, and a conforming implementation is not required to give it any physical meaning. `message` is what a caller is told when a
 write collides; omitted, an implementation derives one from the names.
 
 > **Normative.**
