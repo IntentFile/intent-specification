@@ -1,7 +1,7 @@
 # A report column of a multilingual entity is read in the caller's language
 
 
-- **Status:** draft
+- **Status:** released in [1.5](../versions/1.5.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6544
 - **Discussion:** https://github.com/IntentFile/intent-specification/pull/25
 

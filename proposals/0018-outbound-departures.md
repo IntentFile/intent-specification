@@ -1,6 +1,6 @@
 # outbound — a record may leave on a queue or a topic
 
-- **Status:** draft
+- **Status:** released in [1.5](../versions/1.5.md)
 - **Issue:** [IntentFile/intent-specification#30](https://github.com/IntentFile/intent-specification/issues/30)
 - **Companion:** [`0017-declared-payload.md`](0017-declared-payload.md) — the envelope this construct
   sends; and [`0012-glue-event-axis.md`](0012-glue-event-axis.md) — the axis it binds to.

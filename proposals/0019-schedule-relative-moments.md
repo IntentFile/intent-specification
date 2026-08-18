@@ -1,6 +1,6 @@
 # A schedule's `where` value may be a moment relative to now
 
-- **Status:** draft
+- **Status:** released in [1.5](../versions/1.5.md)
 - **Issue:** [IntentFile/intent-specification#28](https://github.com/IntentFile/intent-specification/issues/28)
 
 ## The problem
