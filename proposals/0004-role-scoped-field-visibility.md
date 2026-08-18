@@ -1,6 +1,6 @@
 # Role-scoped field visibility (`visibleTo`)
 
-- **Status:** draft
+- **Status:** released in [1.4](../versions/1.4.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6550
 
 ## The problem
