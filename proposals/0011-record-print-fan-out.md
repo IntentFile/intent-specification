@@ -1,7 +1,7 @@
 # One document, many recipients: `attach: recordPrint` and the fan-out scoping rule
 
 
-- **Status:** draft
+- **Status:** released in [1.4](../versions/1.4.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6717
 - **Discussion:** https://github.com/IntentFile/intent-specification/pull/20
 
