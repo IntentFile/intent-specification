@@ -78,6 +78,9 @@ decides whether anything follows.
 > It MUST be rejected unless the rule also declares `sourceStatus`, of which it is the inverse, and it
 > MUST name a different status - a write that leaves the status where it stands is not a transition and
 > announces nothing.
+> It MUST be rejected unless the rule declares an `event`: a rule triggered only by a button carries no
+> at-most-once guard, so nothing blocks a replacement and the button is itself the reissue - there is no
+> trigger for the reopen to re-fire.
 > It MUST be rejected on an appending rule: such a rule keeps no at-most-once guard, so no slot is ever
 > consumed for a retired target to free.
 > It MUST be rejected when the target's retirement cannot be recognised where the rule is declared:
