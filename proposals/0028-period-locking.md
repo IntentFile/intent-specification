@@ -1,6 +1,6 @@
 # Period locking - records dated in a closed period become read-only
 
-- **Status:** draft
+- **Status:** accepted - awaiting the reference implementation
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6535
 
 ## The problem

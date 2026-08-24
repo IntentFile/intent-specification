@@ -1,6 +1,6 @@
 # Financial statement definitions: declarative account-to-line mappings over the balance ledger
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:** [eclipse-dirigible/dirigible#6909](https://github.com/eclipse-dirigible/dirigible/issues/6909)
 
 ## The problem

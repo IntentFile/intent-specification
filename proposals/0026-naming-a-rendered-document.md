@@ -1,6 +1,6 @@
 # Naming a rendered document: `fileName`
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:**
 - **Reference implementation:** https://github.com/eclipse-dirigible/dirigible/issues/6899
 

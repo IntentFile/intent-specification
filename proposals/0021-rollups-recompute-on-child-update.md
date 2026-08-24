@@ -1,6 +1,6 @@
 # A roll-up recomputes on the child's update, whatever it aggregates
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6820
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/PENDING
 
