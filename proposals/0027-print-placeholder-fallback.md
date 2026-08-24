@@ -1,6 +1,6 @@
 # Alternative operands in a print placeholder
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:**
 - **Reference implementation:** https://github.com/eclipse-dirigible/dirigible/issues/6900
 

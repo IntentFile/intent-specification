@@ -1,6 +1,6 @@
 # 0025 — Subset relation (`subset`)
 
-- **Status:** proposed
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:** _(the proposal issue, opened first)_
 - **Implementation:** [eclipse-dirigible/dirigible#6878](https://github.com/eclipse-dirigible/dirigible/issues/6878) _(+ the platform PR once opened)_
 

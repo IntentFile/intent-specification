@@ -1,6 +1,6 @@
 # A create-from on the process-step axis, and an opt-in append cardinality
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:**
 - **Implementation:** [eclipse-dirigible/dirigible#6800](https://github.com/eclipse-dirigible/dirigible/issues/6800)
 
