@@ -1,6 +1,6 @@
 # A roll-up's status is relinquished, not only set
 
-- **Status:** draft
+- **Status:** released in [1.7](../versions/1.7.md)
 - **Issue:** none filed; reported against the implementation
 - **Implementation:** [eclipse-dirigible/dirigible#7016](https://github.com/eclipse-dirigible/dirigible/issues/7016)
 

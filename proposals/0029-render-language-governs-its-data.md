@@ -1,6 +1,6 @@
 # A render's language governs its data, not only its template
 
-- **Status:** draft
+- **Status:** released in [1.7](../versions/1.7.md)
 - **Issue:**
 - **Reference implementation:** https://github.com/eclipse-dirigible/dirigible/issues/6945, https://github.com/eclipse-dirigible/dirigible/issues/6947
 
