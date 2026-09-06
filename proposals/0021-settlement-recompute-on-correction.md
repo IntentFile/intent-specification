@@ -1,6 +1,6 @@
 # Settlement allocation recomputes when the payment changes
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:** <!-- link the discussion issue, if any -->
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/issues/6818
 

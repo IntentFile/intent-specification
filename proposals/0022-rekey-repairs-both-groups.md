@@ -1,6 +1,6 @@
 # Re-keying repairs both groups, whatever wrote the key
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6819
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/PENDING
 

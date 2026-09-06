@@ -1,6 +1,6 @@
 # Mapping on arrival — a business key becomes a relation, and a gate ignores what is not understood
 
-- **Status:** draft
+- **Status:** released in [1.6](../versions/1.6.md)
 - **Issue:** [IntentFile/intent-specification#30](https://github.com/IntentFile/intent-specification/issues/30)
 - **Implementation:** [eclipse-dirigible/dirigible#6769](https://github.com/eclipse-dirigible/dirigible/issues/6769)
   ([PR #6839](https://github.com/eclipse-dirigible/dirigible/pull/6839))
