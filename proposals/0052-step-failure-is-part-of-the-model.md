@@ -2,11 +2,18 @@
 
 - **Status:** draft
 - **Issue:** <!-- none yet -->
-- **Implementation:** [eclipse-dirigible/dirigible#7056](https://github.com/eclipse-dirigible/dirigible/issues/7056)
-  (the send half; the delegate half shipped earlier as
-  [#6762](https://github.com/eclipse-dirigible/dirigible/issues/6762))
+- **Issue:** [eclipse-dirigible/dirigible#6762](https://github.com/eclipse-dirigible/dirigible/issues/6762)
+  (the delegate half), [#7056](https://github.com/eclipse-dirigible/dirigible/issues/7056) (the send
+  half), [#7226](https://github.com/eclipse-dirigible/dirigible/issues/7226) and
+  [#7292](https://github.com/eclipse-dirigible/dirigible/issues/7292) (a step routed to itself)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/6783,
+  https://github.com/eclipse-dirigible/dirigible/pull/7165,
+  https://github.com/eclipse-dirigible/dirigible/pull/7274,
+  https://github.com/eclipse-dirigible/dirigible/pull/7311
 - **Companion:** [`0012-glue-event-axis.md`](0012-glue-event-axis.md) — the step-event axis a process
-  already publishes on; this proposal is about the step's *failure*, not its moments.
+  already publishes on; this proposal is about the step's *failure*, not its moments. The erasure of
+  a value an error route wrote (`clearField`, so a record re-driven to success does not keep the
+  previous failure's text) is proposal 0048, not this one.
 
 ## The problem
 
@@ -126,6 +133,12 @@ And:
   sentence cannot be read back.
 - `retry` MUST be rejected when `count` is not a whole number >= 1, or when `every` is not an
   ISO-8601 duration.
+- A step routed **to itself** never advances. A `next` naming its own step, and a decision whose
+  `then` or `else` names the decision itself, MUST be rejected as a self-loop; a target that exists
+  is not enough. This proposal's re-attempt vocabulary is `retry`, so it does not also give
+  `onError: <self>` a meaning - whether a generator accepts one is left open here. A cycle that
+  passes through a wait state, and a timer boundary that re-opens its own user task, are not
+  self-loops and remain legal.
 
 ## Prior art / workarounds
 
@@ -185,6 +198,10 @@ what happens when that call does not succeed:
 > The message made readable as `{error}` MUST name the failure's cause and not only the step that
 > failed; it is the only account of the failure the record will carry. `{error}` MUST be rejected on a
 > step no `onError` route reaches, and as part of a larger value.
+
+> **Normative.** A `next` naming its own step, and a decision whose `then` or `else` names itself,
+> MUST be rejected: a self-loop never advances. A cycle through a wait state, or a timer boundary
+> re-opening its own user task, is not a self-loop.
 
 ## DSL index
 
