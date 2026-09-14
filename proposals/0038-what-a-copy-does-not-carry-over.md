@@ -1,8 +1,11 @@
 # What a copy does not carry over
 
 - **Status:** draft
-- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7358
-- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7360
+- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7358,
+  https://github.com/eclipse-dirigible/dirigible/issues/7366 (a reset of a required to-one with no
+  `init:`)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7360,
+  https://github.com/eclipse-dirigible/dirigible/pull/7374
 
 ## The problem
 
@@ -142,9 +145,10 @@ property's declared type. Both keys name the entity's own fields and to-one rela
 > **Normative.**
 > The following are invalid: a `reset` or `defaults` name that is not a field or a to-one relation
 > of the entity; a name that is one of the built-in drops; the same name in both keys; `now` on a
-> property that is not a `date`, `month` or `week`; a `reset` of a required field with neither a
-> `defaultValue` nor a create-time rule; and a `duplicable` value that is neither `true`, `false`
-> nor a mapping.
+> property that is not a `date`, `month` or `week`; a `reset` of a required value the create cannot
+> fill on its own - a field with neither a `defaultValue` nor a create-time rule, or a to-one
+> relation that declares no `init:`; and a `duplicable` value that is neither `true`, `false` nor a
+> mapping.
 
 ## DSL index
 
