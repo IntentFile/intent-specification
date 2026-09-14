@@ -1,7 +1,15 @@
 # Which source rows become lines
 
 - **Status:** draft
-- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7091
+- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7091,
+  https://github.com/eclipse-dirigible/dirigible/issues/7224 (the refusal is decided before the
+  header is saved), https://github.com/eclipse-dirigible/dirigible/issues/7225 (a status name over a
+  cross-model source), https://github.com/eclipse-dirigible/dirigible/issues/7251 (the same rule in
+  a scheduled query)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7164,
+  https://github.com/eclipse-dirigible/dirigible/pull/7277,
+  https://github.com/eclipse-dirigible/dirigible/pull/7300,
+  https://github.com/eclipse-dirigible/dirigible/pull/7269
 
 ## The problem
 
@@ -76,6 +84,12 @@ refusal:
   and the message identifies the rows that failed. Nothing is created: the target's header, its
   lines and any completion hook on the source are one unit, so a refusal leaves the source exactly
   as it was.
+- Both refusals - an unqualified row under `refuse:`, and a rule that qualifies no row - are
+  decided **before the target header is built**, not rolled back after it. The rule depends on the
+  source rows alone, so nothing else needs to exist to decide it; and a header that is saved and then
+  undone has side effects a rollback does not reach - a number taken from a continuous series, a
+  trail entry for a document that never existed. A refused generation consumes no number and records
+  nothing.
 - Which of the two an unqualified row deserves is a property of the document. Quietly dropping a
   rejected line from an invoice and quietly billing it are both wrong, for different months, so the
   author says which - and skipping is what a rule with no message means.
@@ -95,7 +109,14 @@ refusal:
 - A condition naming the source item's own status relation may use the **seeded status name** rather
   than its numeric id, as every other status reference may. It is resolved on the ITEM's own
   nomenclature, not the document header's - resolving against the header's lifecycle would take an
-  id out of the wrong nomenclature and filter on it silently.
+  id out of the wrong nomenclature and filter on it silently. A value that no status can equal - a
+  misspelled name, a blank, a moment - is refused by name rather than rendered into a rule that
+  matches nothing. The same resolution and the same refusal apply to a scheduled query's `where`,
+  the construct this rule is modelled on, so the two cannot drift apart.
+- When the items source is **owned by another model**, its nomenclature is seeded there, so a status
+  in the rule is referenced by its **numeric seed id**, as every other cross-model status reference
+  is; a name is refused, naming the relation and the owner model, rather than left unresolved as a
+  rule that matches nothing on every click.
 - A moment value must match the compared field's shape: a date field takes `CURRENT_DATE` and a
   date-only offset, a timestamp field `CURRENT_TIMESTAMP`. A moment against a non-temporal field is
   refused rather than compared as text.
