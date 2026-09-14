@@ -2,6 +2,7 @@
 
 - **Status:** draft
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7340
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7354
 - **Discussion:** (this PR)
 
 ## Why
