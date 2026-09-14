@@ -1,7 +1,11 @@
 # A master's delete and the composition children it owns
 
 - **Status:** draft
-- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7100
+- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7100,
+  https://github.com/eclipse-dirigible/dirigible/issues/7143 (a refusal is decided before the first
+  cascade)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7111,
+  https://github.com/eclipse-dirigible/dirigible/pull/7183
 
 ## The problem
 
@@ -76,6 +80,13 @@ Deleting a master:
 Either way a row is never left pointing at a master that is gone. `whenMasterDeleted` decides which
 of the two outcomes; it cannot ask for the third.
 
+A master may own several compositions with different answers - lines that cascade beside copies
+that refuse. Every `refuse` is then decided **before the first cascade begins**, so a deletion that
+ends refused touches no child row at all. Atomicity alone is not enough here: a child's deletion has
+observable side effects that are not rolled back with its row - a change trail records the attempt,
+a reaction may have fired - and a trail that says the lines were deleted, next to lines that still
+exist, is the defect this ordering removes.
+
 ## Edge rules
 
 - Valid on a to-one that declares `composition: true`, and only on the entity's **first**
@@ -122,6 +133,10 @@ failure leaves exactly the orphans it was meant to prevent.
 - **`whenMasterDeleted: refuse`** - deleting the master MUST be rejected while any child of this
   relation exists, with a message naming the master and the child entity, and nothing MUST be
   deleted. The master becomes deletable once the children have been removed.
+
+> **Normative.** Where a master owns several compositions, every `refuse` MUST be decided before the
+> first cascade deletes a child row, so a refused deletion touches no child - including whatever a
+> child's deletion would have recorded or triggered outside the transaction.
 
 > **Normative.** Both outcomes MUST hold for every writer that can delete the master, not only for a
 > deletion requested through a generated interface: a reaction, a scheduled write and a cascade from
