@@ -1,8 +1,11 @@
 # A create-from is guarded by the source's status
 
 - **Status:** draft
-- **Issue:**
-- **Implementation:** https://github.com/eclipse-dirigible/dirigible/issues/7068
+- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7068,
+  https://github.com/eclipse-dirigible/dirigible/issues/7150 (the affordance and the endpoint decide
+  by one rule)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7080,
+  https://github.com/eclipse-dirigible/dirigible/pull/7201
 
 ## The problem
 
@@ -51,7 +54,7 @@ A create-from that declares `sourceStatus` and no `fromStatus` is guarded **impl
 
 - The invocation is refused when the source does not stand in an accepted status, with an error naming the action and the source's current status. Nothing is created and the source is not modified.
 - The refusal is decided **before** the target is created. A guard asked afterwards is not a guard.
-- The affordance follows the guard: an action offered per record is not offered on a record whose status the guard would refuse. The refusal on the endpoint remains the contract — the affordance is not the enforcement.
+- The affordance follows the guard: an action offered per record is not offered on a record whose status the guard would refuse. The refusal on the endpoint remains the contract — the affordance is not the enforcement. The two are one rule read twice: the affordance and the endpoint compare the same status value of the same record, by the same comparison a `transitions` guard uses, so a button is never live where the endpoint would refuse, whatever form the status value takes.
 - A create-from that declares neither `fromStatus` nor `sourceStatus` is unguarded, exactly as before.
 
 ## Edge rules
