@@ -83,9 +83,10 @@ before this proposal.
   decided long before reading this block.
 - The same name in `reset` and `defaults` is rejected - a contradiction.
 - `now` on a property that is not a `date`, `month` or `week` is rejected.
-- A `reset` of a **required** field with neither a `defaultValue` nor a create-time rule is rejected:
-  the clone would be refused by the server on every attempt, which is a mistake at authoring time and
-  not a decision.
+- A `reset` of a **required** value the create cannot fill on its own is rejected: a field with
+  neither a `defaultValue` nor a create-time rule, or a to-one relation that declares no `init:`. The
+  clone would be refused by the server on every attempt, which is a mistake at authoring time and not
+  a decision.
 - A `duplicable` value that is neither `true`, `false` nor a mapping is rejected.
 - The object form on an entity that is not a document is accepted and ignored exactly as
   `duplicable: true` is - the key has never been an error there.
