@@ -1,7 +1,10 @@
 # A value required only under a condition
 
 - **Status:** draft
-- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7094
+- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7094,
+  https://github.com/eclipse-dirigible/dirigible/issues/7237 (the guarded property's type)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7129,
+  https://github.com/eclipse-dirigible/dirigible/pull/7301
 
 ## The problem
 
@@ -76,9 +79,15 @@ which the condition is evaluated:
   the last hop: what a foreign record points at in turn is known only to the model that owns it.
 - The condition is read off the record itself - nothing is loaded to evaluate it - so every property
   it names must be the record's own field or to-one relation.
-- The condition compares strings, integers, booleans and a to-one's key: the types an equality is
-  exact on. A decimal, a double or a date is refused rather than compared for equality, which is a
-  question nobody means to ask of them.
+- The condition compares strings, integers of any width, booleans and a to-one's key: the types an
+  equality is exact on. A decimal, a double or a date is refused rather than compared for equality,
+  which is a question nobody means to ask of them. A property declared without a type is a string,
+  as it is everywhere else, and is guardable as one; the type's spelling does not matter, and a
+  refusal names the type as authored.
+- A to-one's key compares **by value, whatever its width**. The key's width belongs to the target
+  entity - and for a target owned by another model it is known only to that model - so a guard on a
+  to-one holds for an `integer` key and a `long` key alike, rather than switching the rule off on a
+  width the author never saw.
 - A literal that is not a value of the compared property's type is refused. So is a condition that
   does not have the comparison shape at all: reading an uninterpretable condition as "always true"
   would turn the entry into an unconditional `required` nobody authored, and reading it as "always
