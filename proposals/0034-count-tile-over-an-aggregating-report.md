@@ -1,7 +1,11 @@
 # A count tile over an aggregating report
 
 - **Status:** draft
-- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7102
+- **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7102,
+  https://github.com/eclipse-dirigible/dirigible/issues/7105 (rows without an optional relation stay
+  in the report and in the count)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7113,
+  https://github.com/eclipse-dirigible/dirigible/pull/7112
 
 ## The problem
 
@@ -70,6 +74,14 @@ reports:
   the requirement does not apply to it.
 - Widget pins (`at:`) narrow the rows before the sum, so a pinned count is the record count of that
   slice.
+- A report that crosses an **optional** to-one relation - in its dimensions, measures, filter or
+  parameters - keeps the source records that do not have it: the related dimension renders empty for
+  them, and they are counted. Only a relation that is `required`, or the composition parent, may be
+  joined so that a record without it drops out, because such a record cannot exist. Two confirmed
+  orders with no store assigned are two open orders, and a tile that reads 0 because the report
+  silently joined them away is the same defect as the group count, arrived at from the other side.
+  A filter over the optional relation still means what it says: `store.name <> 'X'` does not hold
+  for a store-less row, and a report that wants those rows asks for `store.name` being empty.
 - A report that declares measures and no `widget:` is unaffected, as is one whose widget is of kind
   `value` or `list`.
 
