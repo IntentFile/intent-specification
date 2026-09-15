@@ -88,3 +88,59 @@ Today the only way to approximate it is `immutableWhen:` over every status the f
 freezes the whole record in those statuses (the way out, not the way in) and still leaves the jump
 from DRAFT open. The alternative in the field is to not expose the generated controllers at all,
 which gives up the REST surface the model exists to produce.
+
+## Specification text
+
+**Anchor:** Processes & forms > processes > Service tasks, appended after the **Normative**
+blockquote on the `notify` service task and before "Decision steps".
+
+#### A status the flow writes is the flow's column
+
+An entity whose `function: EntityStatus` relation is written by a `setRelationField` step of a
+`processes` flow has declared, by that step, that the flow owns the status. No further key is
+needed. A create or update of the record through a generated surface that sets or changes that
+relation is refused as a conflict, naming the relation:
+
+```
+'Status' changes through the workflow, not a direct edit
+```
+
+The flow's own writers are unaffected: a `setRelationField` step and a `transitions` entry write
+the column through the model's own targeted-write path, never through a create or an update of
+the whole record, so nothing the model declares loses its way to move the status. The status is
+derived state owned by the flow — the same class of column as an aggregate or a roll-up target,
+which a user write already may not set.
+
+- **An absent value is not a change.** A caller sends the fields its form edits; a write that does
+  not carry the status keeps the stored one — neither refused nor erased.
+- **A create may carry the declared start.** With `init` declared on the relation, a create naming
+  exactly that status is accepted; any other value is refused. With no `init`, any status on a
+  create is refused. A record cannot be created in the middle of its own flow.
+- **A `transitions` entry does not claim the column.** It is the declared way a person moves the
+  status by hand; the construct that guards every other hand write is `lifecycle`.
+- An entity whose status no flow writes generates exactly as before.
+
+> **Normative.** Where any `processes` entry carries a `setRelationField` step over an entity's
+> `function: EntityStatus` relation, a conforming generator MUST refuse a create or an update
+> through every generated surface that sets that relation to a value other than the one stored (on
+> update) or other than the declared `init` (on create), reporting the refusal as a conflict (409
+> where the surface is HTTP) and naming the relation. A write that does not carry the relation
+> MUST keep the stored value. With no `init` declared, a create carrying any value for the relation
+> MUST be refused. The refusal MUST NOT apply to the model's `setRelationField` steps or its
+> `transitions` entries, which write the relation by a targeted write. A `transitions` entry over
+> the relation MUST NOT by itself make the relation flow-owned. An entity whose status relation no
+> `processes` step writes MUST generate as before.
+
+<!-- editor: the proposal names only `setRelationField` steps and `transitions` as the writers
+     left unaffected; it does not say whether the other declared status writers of the format
+     (`checks: kind: guard` with `outcome: reject`, `resolves … setStatus`, `rollups`
+     `statusWhenFull` / `statusWhenPartial`, `generates.sourceStatus`) also bypass the refusal. The
+     text above stays with the two named; a release may want to state the general rule for every
+     declared system writer. -->
+<!-- editor: the proposal is about the `function: EntityStatus` relation only; a `setRelationField`
+     over another to-one relation is not covered, and the text above does not claim it. -->
+
+## DSL index
+
+No construct is added — the declaration is the existing `processes` step. The `processes` and
+`lifecycle` rows are unchanged.
