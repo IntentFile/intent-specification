@@ -1,6 +1,6 @@
 # Which source rows become lines
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7091,
   https://github.com/eclipse-dirigible/dirigible/issues/7224 (the refusal is decided before the
   header is saved), https://github.com/eclipse-dirigible/dirigible/issues/7225 (a status name over a

@@ -1,6 +1,6 @@
 # A master's delete and the composition children it owns
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7100,
   https://github.com/eclipse-dirigible/dirigible/issues/7143 (a refusal is decided before the first
   cascade)

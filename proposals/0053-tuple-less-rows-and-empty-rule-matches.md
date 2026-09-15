@@ -1,6 +1,6 @@
 # A row outside every tuple is not guarded, and a rule match is a literal that says something
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7180
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7253
 

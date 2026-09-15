@@ -1,6 +1,6 @@
 # A count tile over an aggregating report
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7102,
   https://github.com/eclipse-dirigible/dirigible/issues/7105 (rows without an optional relation stay
   in the report and in the count)

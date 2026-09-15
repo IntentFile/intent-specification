@@ -1,6 +1,6 @@
 # A composition child may be read-only on a scoped surface independently of its parent
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7340
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7354
 - **Discussion:** (this PR)
