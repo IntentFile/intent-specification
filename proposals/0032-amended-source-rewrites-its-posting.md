@@ -1,6 +1,6 @@
 # An amended source rewrites its posting
 
-- **Status:** draft
+- **Status:** released in [1.7](../versions/1.7.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7071
 
 ## The problem

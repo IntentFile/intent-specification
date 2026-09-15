@@ -1,6 +1,6 @@
 # Enrichment phases: a moment a silent write announces
 
-- **Status:** draft
+- **Status:** released in [1.7](../versions/1.7.md)
 - **Issue:**
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/issues/6929
 

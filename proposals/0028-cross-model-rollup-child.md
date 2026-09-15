@@ -1,6 +1,6 @@
 # A roll-up whose counted child is owned by another model
 
-- **Status:** accepted - awaiting the reference implementation
+- **Status:** released in [1.7](../versions/1.7.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6930
 
 ## The problem
