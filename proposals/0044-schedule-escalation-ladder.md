@@ -1,6 +1,6 @@
 # A scheduled reminder records what it sent and escalates by days past due
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** [eclipse-dirigible/dirigible#7276](https://github.com/eclipse-dirigible/dirigible/issues/7276),
   [eclipse-dirigible/dirigible#7365](https://github.com/eclipse-dirigible/dirigible/issues/7365)
 - **Implementation:** [eclipse-dirigible/dirigible#7342](https://github.com/eclipse-dirigible/dirigible/pull/7342),

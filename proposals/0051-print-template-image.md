@@ -1,6 +1,6 @@
 # A print template renders an image from the tenant's files
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7024
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7031
 
