@@ -1,6 +1,6 @@
 # Print-template row filtering (`filter` / `match`)
 
-- **Status:** accepted (1.2)
+- **Status:** released in [1.2](../versions/1.2.md)
 - **Issue:** <!-- link the discussion issue, if any -->
 - **Proposed for:** the printable-documents template language (versions/1.2.md "Printable documents", accepted)
 

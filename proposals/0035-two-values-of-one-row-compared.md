@@ -1,6 +1,6 @@
 # Two values of one row, compared
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7095,
   https://github.com/eclipse-dirigible/dirigible/issues/7338 (the literal operand and the gate)
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7121 (two fields of one

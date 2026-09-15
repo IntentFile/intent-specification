@@ -1,6 +1,6 @@
 # A value required only under a condition
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7094,
   https://github.com/eclipse-dirigible/dirigible/issues/7237 (the guarded property's type)
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7129,

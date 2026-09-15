@@ -1,6 +1,6 @@
 # A step's failure is part of the model — `retry:`, `onError:` and `{error}`, on a delegate and on a send
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** <!-- none yet -->
 - **Issue:** [eclipse-dirigible/dirigible#6762](https://github.com/eclipse-dirigible/dirigible/issues/6762)
   (the delegate half), [#7056](https://github.com/eclipse-dirigible/dirigible/issues/7056) (the send

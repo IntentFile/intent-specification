@@ -1,6 +1,6 @@
 # A form field may reach across models
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7093
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7118
 

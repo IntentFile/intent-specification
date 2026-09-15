@@ -1,6 +1,6 @@
 # Keyed aggregates, guard checks, and event-driven row posting
 
-- **Status:** accepted (1.1)
+- **Status:** released in [1.1](../versions/1.1.md)
 - **Issue:** <!-- link the discussion issue, if any -->
 - **Proposed for:** version 1.1 (see `versions/1.1.md` in this pull request)
 

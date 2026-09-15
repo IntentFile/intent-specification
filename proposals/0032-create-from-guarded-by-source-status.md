@@ -1,6 +1,6 @@
 # A create-from is guarded by the source's status
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7068,
   https://github.com/eclipse-dirigible/dirigible/issues/7150 (the affordance and the endpoint decide
   by one rule)

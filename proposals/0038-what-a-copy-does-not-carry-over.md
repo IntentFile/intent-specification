@@ -1,6 +1,6 @@
 # What a copy does not carry over
 
-- **Status:** draft
+- **Status:** released in [1.8](../versions/1.8.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7358,
   https://github.com/eclipse-dirigible/dirigible/issues/7366 (a reset of a required to-one with no
   `init:`)
