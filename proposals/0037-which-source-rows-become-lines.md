@@ -133,3 +133,72 @@ refusal of a required value forces today, and which no one can do for a document
 schedule or an event rather than a click. Adding a status guard to the source document instead
 ("only generate from an APPROVED project month") states a different rule: it refuses the whole
 month because one member's line is not ready, rather than billing the lines that are.
+
+## Specification text
+
+**Anchor:** Declarative glue > generates — create-from, as a new subsection after the paragraph
+that ends "The list form is not available on a scheduled generate." and before "Prompted input —
+`prompt:`".
+
+#### Which source rows become lines — `items.where` / `items.refuse`
+
+The mirror form of `items` may carry a rule over the source rows, in the shape a schedule's `where`
+already uses, and optionally an authored refusal:
+
+```yaml
+    items:
+      from: EmployeeTimesheet
+      to: SalesInvoiceItem
+      where:
+        - { field: Status,     op: eq, value: APPROVED }   # only approved member timesheets
+        - { field: totalHours, op: gt, value: 0 }          # an empty one is not a line
+      refuse: "Member timesheet is not approved"           # optional: an unqualified row stops the generation
+      map: { name: employeeName, quantity: totalHours, price: rate }
+```
+
+- `where` — a list of conditions, every one of which must hold for a source row to become a target
+  line. `field` names a field or a to-one relation of the items `from` entity; `op` is one of `eq`,
+  `ne`, `gt`, `ge`, `lt`, `le`, `like`; `value` is a literal, a status reference, or a moment
+  (`CURRENT_DATE`, `CURRENT_TIMESTAMP-PT30M`) resolved against the clock of the run that generates.
+- `refuse` — optional. Without it a row that fails the rule is simply not a line. With it an
+  unqualified row refuses the whole generation with the authored message, which identifies the
+  rows that failed.
+
+A rule that qualifies no row at all refuses the generation either way, naming the source: a
+document of no lines is not the document that was asked for. An `items` block with no `where`
+behaves as before — every source row is a line. An absent value is not a match, so `gt 0` excludes
+a row whose field is empty.
+
+> **Normative.** A conforming generator MUST create a target line only for a source row on which
+> every `where` condition holds. Without `refuse`, an unqualified row MUST be skipped. With
+> `refuse`, an unqualified row MUST refuse the whole generation with the authored message, naming
+> the rows that failed; a rule that qualifies no row MUST refuse the generation, naming the source,
+> whether or not `refuse` is given. Both refusals MUST be decided before the target header is
+> built — a refused generation creates nothing, consumes no document number, records no trail
+> entry, and leaves the source, including any completion hook on it, exactly as it was. Moments
+> MUST resolve at each run of the generation, never be baked into the generated artefact, and MUST
+> match the compared field's shape (a date field takes `CURRENT_DATE` and a date-only offset, a
+> timestamp field `CURRENT_TIMESTAMP`); a moment against a non-temporal field is refused. A
+> condition on the source item's own status relation MAY name the status by its seeded name, which
+> is resolved on the ITEM's nomenclature, never the document header's; a value no status can equal
+> — a misspelled name, a blank, a moment — MUST be reported by name rather than rendered into a
+> rule that matches nothing. When the items source is owned by another model, a status MUST be
+> referenced by its numeric seed id; a name MUST be refused, naming the relation and the owner
+> model. Each of the following MUST be reported as an authoring error at generation: `refuse`
+> without `where`; a `field` the `from` entity does not declare; and `where` or `refuse` on the
+> computed (list) form of `items`, which has no source rows to select from and guards its lines
+> with its own `when` cell. The same status-name resolution and the same refusal of an
+> unresolvable status value apply to a schedule's `where`, the construct this rule is modelled on.
+
+<!-- editor: the last normative sentence restates, for schedules > where, a rule the proposal
+     asserts holds there too ("so the two cannot drift apart"); the release may prefer to mirror
+     it into the schedules section rather than carry it here. -->
+<!-- editor: the proposal says an authored refusal "identifies the rows that failed" without
+     saying how a row is identified; the text above requires only that they are named. -->
+
+## DSL index
+
+| Construct | What it gives you |
+| --- | --- |
+| [`generates.items.where`](#which-source-rows-become-lines--itemswhere--itemsrefuse) | which source rows of a mirrored `items` block become target lines — every condition must hold; a rule that qualifies no row refuses the generation |
+| [`generates.items.refuse`](#which-source-rows-become-lines--itemswhere--itemsrefuse) | an authored message under which an unqualified source row refuses the whole generation before the header is built, instead of being skipped |
