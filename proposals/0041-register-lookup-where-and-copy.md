@@ -1,6 +1,6 @@
 # A register lookup narrows its register, reads the document header and copies the found row's scalars
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7025 (and https://github.com/eclipse-dirigible/dirigible/issues/6812 for `where:`)
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/6858 (`where:`), https://github.com/eclipse-dirigible/dirigible/pull/7032 (paths and `copy:`)
 
