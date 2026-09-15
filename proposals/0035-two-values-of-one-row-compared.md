@@ -123,3 +123,77 @@ create-time calculation that throws - a calculation rather than a refusal, firin
 that declares it and reaching the caller as whatever its exception happens to carry. The gated form
 closes a third: a "days > 0 before SUBMITTED" rule mis-authored as an `itemsMin` over a child the
 approval step had not created yet, which refused every submission.
+
+## Specification text
+
+**Anchor:** Entities & fields > checks — declarative validations, as a new subsection after the
+paragraph "`exactlyOne` runs on every user write; …" and before "kind: guard — a precondition over
+an aggregate".
+
+#### kind: compare — two values of one row
+
+A row-level check that names a field of the record and the relation it must stand in to a second
+value: another of the record's own fields (`than`) or a literal (`value`).
+
+```yaml
+- name: SalesInvoice
+  checks:
+    - { kind: compare, field: due,  op: ge, than: date,  message: "Due cannot be before the invoice date" }
+    - { kind: compare, field: paid, op: le, than: total, message: "Paid cannot exceed the total" }
+    - { kind: compare, field: discountPercent, op: le, value: 100, message: "A discount cannot exceed 100%" }
+- name: VacationRequest
+  checks:
+    - { kind: compare, field: from, op: ge, value: "CURRENT_DATE", message: "Leave cannot start in the past" }
+    - { kind: compare, field: days, op: gt, value: 0, status: SUBMITTED,
+        message: "A request must cover at least one working day" }
+```
+
+- `field` — the left operand: a field of the record itself.
+- `op` — one of `ge`, `gt`, `le`, `lt`, `eq`, `ne`, read as `field <op> than` or `field <op> value`.
+  Required.
+- `than` — the right operand as another field of the same record. Exactly one of `than` / `value`.
+- `value` — the right operand as a literal, typed by `field`: a number for a numeric field; for a
+  `date` or `timestamp` field either a **moment** — `CURRENT_DATE`, `CURRENT_TIMESTAMP` or `NOW`
+  with at most one signed ISO-8601 duration offset (`CURRENT_DATE+P7D`), the vocabulary a
+  schedule's `where` carries, resolved against the clock of the write — or a quoted ISO-8601 date
+  or instant.
+- `status` — optional. Without it the check holds on every user write, like `exactlyOne`. With it
+  the check is evaluated when the record is persisted carrying that status — the transition into
+  it, not the drafting before it — and the refusal reaches whoever performed the transition.
+- `message` — the authored text the refused write is reported with.
+
+An absent operand is not a violation: a comparison is about two values that exist, and whether a
+field may be empty at all is `required`, a separate declaration. A record with no `due` passes and
+starts failing the moment a `due` earlier than `date` is entered; a record with no `days` is not
+refused by `days > 0`.
+
+> **Normative.** A conforming generator MUST evaluate a `compare` check on every user write of the
+> record through every generated surface — or, when `status` is given, whenever the record is
+> persisted carrying that status — and MUST refuse a violating write with the authored `message`.
+> A `status` gate requires the entity to declare a `function: EntityStatus` relation. `op` is
+> required; an entry without it MUST be reported as an authoring error, never defaulted. Exactly
+> one of `than` and `value` MUST be given. Each of the following MUST be reported as an authoring
+> error at generation: a `field` or `than` that is a relation rather than a field of the record;
+> `than` naming the same field as `field`; two fields not of one comparison family (both dates,
+> both timestamps, or both numbers of any width — a date against a timestamp is refused, not
+> coerced); a field whose type is not a date, a timestamp or a number (a string, a boolean or a
+> month/week label is refused rather than ordered lexicographically); a literal that is not a value
+> of the field's type; a moment whose shape the field cannot carry (`CURRENT_TIMESTAMP`, or an
+> offset with a time component, against a `date` field); and a temporal literal that is not quoted
+> (an unquoted `2026-01-01` reaches the generator as a date object, and is refused with a message
+> saying so). Numbers MUST compare by value, so a `decimal` against a `long`, or two decimals of
+> different scale, compare exactly. A write in which either operand is absent MUST NOT be refused
+> by the check. Several `compare` entries on one entity are independent and all hold.
+
+<!-- editor: the proposal puts "a field of a related record" out of scope for v1 without saying
+     whether a `Relation.field` path is refused or silently ignored; the narrower reading — refused
+     as an authoring error, since `field`/`than` must be fields of the record — is stated above. -->
+<!-- editor: the proposal does not say whether `status:` on a compare check accepts a seeded status
+     name as well as an id (its example uses a name); the text above stays silent and relies on the
+     general "Status references — name, not number" rule. -->
+
+## DSL index
+
+| Construct | What it gives you |
+| --- | --- |
+| [`checks: kind: compare`](#kind-compare--two-values-of-one-row) | a field of the record against another of its own fields or a typed literal (`ge` / `gt` / `le` / `lt` / `eq` / `ne`), refused with a message on every write or on the transition into a status |
