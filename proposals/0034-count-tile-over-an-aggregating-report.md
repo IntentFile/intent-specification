@@ -91,3 +91,50 @@ The only workaround available today is `kind: value` over the report's own `coun
 `value` reads ONE cell (the first row, or the row the pins select), so on a status-dimensioned report
 it shows the count of a single status. There is no authored shape that reaches the total, which is
 why this is a defect in the specified behaviour of `count` rather than a request for a new key.
+
+## Specification text
+
+**Anchor:** Presentation > reports > Dashboard KPI widgets — the bullet list under the example.
+The bullet "`kind: count` (default) — the number of records the report yields." is replaced by the
+first bullet below; the remaining paragraphs are appended after the list, before "Declaring any
+widget replaces the automatic per-entity count tiles".
+
+- `kind: count` (default) — the number of records the report yields. Over a report that declares
+  no `measures` this is the number of rows, because one row is one record. Over a report that
+  declares measures — where one row is one group — it is the report's `count(*)` measure **summed
+  over the report's rows**, under the same `filter`, lifecycle `scope`, `parameters` and widget
+  pins (`at`) the report itself applies. The tile never shows the number of groups.
+
+A report whose rows are its unit of account by construction — a balance report (one row per
+account) or a statement (one row per declared line) — declares no measure and counts its rows.
+`count(*)` and `count()` are the same measure; `count(<field>)` is not: it counts the rows where
+that field has a value, a different number an author may want beside the total.
+
+> **Normative.** A `kind: count` widget over a report that declares measures MUST show the sum of
+> the report's `count(*)` measure over the rows the report yields, after the report's filter,
+> scope, parameters and the widget's pins have been applied. An aggregating report that carries a
+> `kind: count` widget and declares no `count(*)` (or `count()`) measure MUST be rejected at
+> generation, naming the report and the fix — declare `count(*)`, or use `kind: value` for a measure
+> the report already has. A `count(<field>)` measure does not satisfy the requirement. A report that
+> declares measures and no `widget`, and a widget of kind `value` or `list`, are unaffected.
+
+A report that reads through an **optional** to-one relation — in its dimensions, measures, filter
+or parameters — keeps the source records that do not have it: the related dimension renders empty
+for them, and they are counted. Only a relation declared `required`, or the composition parent,
+may be joined so that a record without it drops out, because such a record cannot exist. A filter
+over the optional relation's fields still means what it says: a comparison such as
+`store.name <> 'X'` does not hold for a record with no store, so that record is not in the filtered
+result.
+
+> **Normative.** A conforming generator MUST NOT drop a source record from a report's rows because
+> an optional to-one relation the report reads through is unset. It MAY drop such a record only
+> where the relation is `required` or is the composition parent.
+
+<!-- editor: the proposal says "a report that wants those rows asks for `store.name` being empty"
+     without naming the filter syntax for an emptiness test; the text above states only the
+     narrower consequence (a comparison over the optional relation's field does not hold for a
+     record without it) and leaves the emptiness predicate to the existing filter vocabulary. -->
+
+## DSL index
+
+No construct is added and no key changes its shape; the existing `reports` row is unchanged.
