@@ -1,6 +1,6 @@
 # Status-gated visibility of a field or a composition panel - `visibleWhen`
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/99, https://github.com/eclipse-dirigible/dirigible/issues/7502
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7566
 

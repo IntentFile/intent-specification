@@ -1,6 +1,6 @@
 # Which target rows a picker offers
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7496
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7514
 

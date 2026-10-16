@@ -1,6 +1,6 @@
 # Arrival collections — an array in the envelope becomes the composition children of the created record
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** [eclipse-dirigible/dirigible#7593](https://github.com/eclipse-dirigible/dirigible/issues/7593)
 - **Implementation:** [eclipse-dirigible/dirigible#7594](https://github.com/eclipse-dirigible/dirigible/pull/7594) (released in [14.70.0](https://github.com/eclipse-dirigible/dirigible/releases/tag/v14.70.0))
 - **Companion:** [`0021-arrival-mapping.md`](0021-arrival-mapping.md) — the envelope reading this one
