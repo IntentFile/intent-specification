@@ -1,6 +1,6 @@
 # A process decision may branch on a to-one relation of its trigger entity
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/112, https://github.com/eclipse-dirigible/dirigible/issues/7648
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7679
 

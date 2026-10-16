@@ -1,6 +1,6 @@
 # `defaultValue: now` on a date, timestamp, month or week field
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/104, https://github.com/eclipse-dirigible/dirigible/issues/7603, https://github.com/eclipse-dirigible/dirigible/issues/7392
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7627, https://github.com/eclipse-dirigible/dirigible/pull/7395
 

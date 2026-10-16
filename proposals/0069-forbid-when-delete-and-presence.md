@@ -1,6 +1,6 @@
 # A `forbidWhen` refuses the delete of the row it guards, and a term may test presence
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/105, https://github.com/eclipse-dirigible/dirigible/issues/7372, https://github.com/eclipse-dirigible/dirigible/issues/7555, https://github.com/eclipse-dirigible/dirigible/issues/7509
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7417, https://github.com/eclipse-dirigible/dirigible/pull/7583, https://github.com/eclipse-dirigible/dirigible/pull/7528
 - **Amends:** [0047 - checks: forbidWhen](0047-checks-forbid-when.md)

@@ -1,6 +1,6 @@
 # An authored `id` keys a check's message in the translation catalog
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/109, https://github.com/eclipse-dirigible/dirigible/issues/7611
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7621
 
