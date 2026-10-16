@@ -1,6 +1,6 @@
 # A soft tier of checks - `severity: warn`, `duplicate` and `itemsCompare`
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/98, https://github.com/eclipse-dirigible/dirigible/issues/7466, https://github.com/eclipse-dirigible/dirigible/issues/7524
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7513, https://github.com/eclipse-dirigible/dirigible/pull/7527
 

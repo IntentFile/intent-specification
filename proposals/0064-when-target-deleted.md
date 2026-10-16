@@ -1,6 +1,6 @@
 # What deleting a referenced record does to the records pointing at it - `whenTargetDeleted`
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/100, https://github.com/eclipse-dirigible/dirigible/issues/7547
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7573, https://github.com/eclipse-dirigible/dirigible/pull/7657
 

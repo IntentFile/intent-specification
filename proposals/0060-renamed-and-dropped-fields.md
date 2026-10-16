@@ -1,6 +1,6 @@
 # A renamed field keeps its values, a retired one is dropped only on request
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7635
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7674
 

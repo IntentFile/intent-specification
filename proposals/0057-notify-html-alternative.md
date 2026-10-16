@@ -1,6 +1,6 @@
 # The notify block may carry an HTML alternative: `html`
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7488
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/issues/7488 (tracking issue; no PR yet)
 - **Discussion:** (this PR)

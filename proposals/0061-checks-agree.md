@@ -1,6 +1,6 @@
 # Two relations of one row that must agree on a shared target - `checks: kind: agree`
 
-- **Status:** draft
+- **Status:** released in [1.10](../versions/1.10.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/97, https://github.com/eclipse-dirigible/dirigible/issues/7409, https://github.com/eclipse-dirigible/dirigible/issues/7589, https://github.com/eclipse-dirigible/dirigible/issues/7631
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7418, https://github.com/eclipse-dirigible/dirigible/pull/7626, https://github.com/eclipse-dirigible/dirigible/pull/7677
 
