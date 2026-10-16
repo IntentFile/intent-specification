@@ -1,6 +1,6 @@
 # A print placeholder may carry a format pattern
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/6982
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/6983
 

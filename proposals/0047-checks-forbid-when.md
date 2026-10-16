@@ -1,6 +1,6 @@
 # A write is rejected while a condition holds - `checks: forbidWhen`
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7275
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7326
 

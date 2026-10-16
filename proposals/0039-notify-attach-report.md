@@ -1,6 +1,6 @@
 # A notify block may attach a parameterized report render
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** [eclipse-dirigible/dirigible#6931](https://github.com/eclipse-dirigible/dirigible/issues/6931),
   extended by [eclipse-dirigible/dirigible#7030](https://github.com/eclipse-dirigible/dirigible/issues/7030)
 - **Implementation:** [eclipse-dirigible/dirigible#6934](https://github.com/eclipse-dirigible/dirigible/pull/6934),

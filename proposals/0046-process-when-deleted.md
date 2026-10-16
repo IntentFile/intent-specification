@@ -1,6 +1,6 @@
 # Deleting a document retires its running process
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7074
 - **Implementation:** [eclipse-dirigible/dirigible#7087](https://github.com/eclipse-dirigible/dirigible/pull/7087)
   (the construct), [eclipse-dirigible/dirigible#7169](https://github.com/eclipse-dirigible/dirigible/pull/7169)

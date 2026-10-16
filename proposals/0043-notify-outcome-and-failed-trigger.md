@@ -1,6 +1,6 @@
 # A notify delivery is recorded on the record, and a failed one is an event
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/7023
 - **Implementation:** [eclipse-dirigible/dirigible#7033](https://github.com/eclipse-dirigible/dirigible/pull/7033),
   completed by [#7313](https://github.com/eclipse-dirigible/dirigible/pull/7313)

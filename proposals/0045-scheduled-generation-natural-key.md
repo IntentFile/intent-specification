@@ -1,6 +1,6 @@
 # A scheduled generation declares its natural key
 
-- **Status:** draft
+- **Status:** released in [1.9](../versions/1.9.md)
 - **Issue:** [eclipse-dirigible/dirigible#7070](https://github.com/eclipse-dirigible/dirigible/issues/7070) (the key), [#7106](https://github.com/eclipse-dirigible/dirigible/issues/7106) (the period of the run); edge rules from [#7134](https://github.com/eclipse-dirigible/dirigible/issues/7134) (a null key term) and [#7133](https://github.com/eclipse-dirigible/dirigible/issues/7133) (one transaction per source row)
 - **Implementation:** [eclipse-dirigible/dirigible#7079](https://github.com/eclipse-dirigible/dirigible/pull/7079), [#7117](https://github.com/eclipse-dirigible/dirigible/pull/7117), [#7166](https://github.com/eclipse-dirigible/dirigible/pull/7166), [#7168](https://github.com/eclipse-dirigible/dirigible/pull/7168)
 
