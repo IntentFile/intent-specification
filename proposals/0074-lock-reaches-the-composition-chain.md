@@ -1,6 +1,6 @@
 # A master's lock reaches its whole composition chain
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/110, https://github.com/eclipse-dirigible/dirigible/issues/7550
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7571
 

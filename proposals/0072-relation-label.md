@@ -1,6 +1,6 @@
 # A to-one relation and a subset take `label` and `countryLabels`
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/108, https://github.com/eclipse-dirigible/dirigible/issues/7650
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7676
 - **Amends:** [0031 - a field's label and country variants](0031-field-label-and-country-variants.md)

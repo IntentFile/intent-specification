@@ -1,6 +1,6 @@
 # The list's own column set and order - `list`
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/101, https://github.com/eclipse-dirigible/dirigible/issues/7614
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7615
 

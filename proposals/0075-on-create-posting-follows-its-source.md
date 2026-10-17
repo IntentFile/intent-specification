@@ -1,6 +1,6 @@
 # An `onCreate` posting follows its source's edit and delete
 
-- **Status:** draft
+- **Status:** released in [1.11](../versions/1.11.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/111, https://github.com/eclipse-dirigible/dirigible/issues/7634
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7673
 - **Amends:** [0032 - an amended source rewrites its posting](0032-amended-source-rewrites-its-posting.md)
