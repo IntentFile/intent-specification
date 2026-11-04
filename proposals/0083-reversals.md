@@ -1,6 +1,6 @@
 # A manual Reverse creates a posted document's negated twin, linked both ways, in one unit of work
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/144, https://github.com/eclipse-dirigible/dirigible/issues/7886
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7900
 

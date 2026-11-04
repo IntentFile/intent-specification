@@ -1,6 +1,6 @@
 # An action may call the application's own endpoint
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/156, https://github.com/eclipse-dirigible/dirigible/issues/8090, https://github.com/eclipse-dirigible/dirigible/issues/8296, https://github.com/eclipse-dirigible/dirigible/issues/8323
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8092, https://github.com/eclipse-dirigible/dirigible/pull/8305, https://github.com/eclipse-dirigible/dirigible/pull/8326
 

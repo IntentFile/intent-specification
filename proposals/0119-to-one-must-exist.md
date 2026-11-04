@@ -1,6 +1,6 @@
 # A to-one naming a record that does not exist is refused on create and update
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/163, https://github.com/eclipse-dirigible/dirigible/issues/8100, https://github.com/eclipse-dirigible/dirigible/issues/7986
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8251
 

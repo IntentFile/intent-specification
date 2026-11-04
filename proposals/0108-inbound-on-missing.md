@@ -1,6 +1,6 @@
 # inbound: onMissing on a lookup - a message whose lookup resolves nothing is dead-lettered, not dropped
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/134, https://github.com/eclipse-dirigible/dirigible/issues/8031
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8034
 
