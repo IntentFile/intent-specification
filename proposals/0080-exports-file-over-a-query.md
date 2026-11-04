@@ -1,6 +1,6 @@
 # exports - a fixed-width, delimited or XML file over a query, every run recorded on a ledger
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/141, https://github.com/eclipse-dirigible/dirigible/issues/7855, https://github.com/eclipse-dirigible/dirigible/issues/7925
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7885, https://github.com/eclipse-dirigible/dirigible/pull/7999
 

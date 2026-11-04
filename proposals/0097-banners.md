@@ -1,6 +1,6 @@
 # A record page says when the record or its latest related row needs attention - `banners`
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/158, https://github.com/eclipse-dirigible/dirigible/issues/8371
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8389
 
