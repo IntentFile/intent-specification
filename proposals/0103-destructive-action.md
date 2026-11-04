@@ -1,6 +1,6 @@
 # An action or transition may be destructive - `destructive: true` - a red run button, placed beside Delete
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/165, https://github.com/eclipse-dirigible/dirigible/issues/8364
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8381
 

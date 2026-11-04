@@ -1,6 +1,6 @@
 # A `forbidWhen` scoped by `verbs` refuses only the writes it names
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/146, https://github.com/eclipse-dirigible/dirigible/issues/7710
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7711
 - **Amends:** [0047 - checks: forbidWhen](0047-checks-forbid-when.md), [0069 - a `forbidWhen` refuses the delete](0069-forbid-when-delete-and-presence.md)

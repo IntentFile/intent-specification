@@ -1,6 +1,6 @@
 # A posting refused by a closed period is deferred, not lost, and is posted again when the period reopens
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/163, https://github.com/eclipse-dirigible/dirigible/issues/7703
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7709
 - **Amends:** [0028 - period locking](0028-period-locking.md)
