@@ -1,6 +1,6 @@
 # `single` - a boolean held by at most one row, fleet-wide or per a to-one scope
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/152, https://github.com/eclipse-dirigible/dirigible/issues/8101
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8248
 

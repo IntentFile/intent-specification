@@ -1,6 +1,6 @@
 # A statement report on the cash basis - `cashAccounts:` declares the direct-method cash-flow statement
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/139, https://github.com/eclipse-dirigible/dirigible/issues/7857
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7880
 

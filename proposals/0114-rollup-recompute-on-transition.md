@@ -1,6 +1,6 @@
 # A filtered roll-up follows a status move of its child
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/163, https://github.com/eclipse-dirigible/dirigible/issues/7942
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8003
 

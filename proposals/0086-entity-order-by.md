@@ -1,6 +1,6 @@
 # An entity's default row order - `orderBy` - for the list, the tree and every picker
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/147, https://github.com/eclipse-dirigible/dirigible/issues/7727
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7739
 

@@ -1,6 +1,6 @@
 # A value picked on create and fixed afterwards - `fixedAfterCreate`; a composition child's master is fixed by default
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/150, https://github.com/eclipse-dirigible/dirigible/issues/7903, https://github.com/eclipse-dirigible/dirigible/issues/8363, https://github.com/eclipse-dirigible/dirigible/issues/8306
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8246, https://github.com/eclipse-dirigible/dirigible/pull/8378, https://github.com/eclipse-dirigible/dirigible/pull/8425
 

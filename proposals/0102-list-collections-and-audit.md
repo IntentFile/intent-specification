@@ -1,6 +1,6 @@
 # A list may show a record's child rows and its audit columns; a register may show its source's audit columns
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/164, https://github.com/eclipse-dirigible/dirigible/issues/8295, https://github.com/eclipse-dirigible/dirigible/issues/8376, https://github.com/eclipse-dirigible/dirigible/issues/8062
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8303, https://github.com/eclipse-dirigible/dirigible/pull/8377, https://github.com/eclipse-dirigible/dirigible/pull/8063
 

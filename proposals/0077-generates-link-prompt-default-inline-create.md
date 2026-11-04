@@ -1,6 +1,6 @@
 # A create-from records a link row to its target, a prompt input takes a default, and a to-one may opt out of inline creation
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/138, https://github.com/eclipse-dirigible/dirigible/issues/7748
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7756
 

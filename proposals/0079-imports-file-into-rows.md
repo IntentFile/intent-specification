@@ -1,6 +1,6 @@
 # imports - an uploaded CSV, MT940 or camt.053 file is read into entity rows, whole or not at all
 
-- **Status:** draft
+- **Status:** released in [1.12](../versions/1.12.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/140, https://github.com/eclipse-dirigible/dirigible/issues/7856, https://github.com/eclipse-dirigible/dirigible/issues/8190
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7884, https://github.com/eclipse-dirigible/dirigible/pull/8325
 
