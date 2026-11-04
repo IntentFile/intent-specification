@@ -85,8 +85,8 @@ fields:
 
 `main` is for read-only text too long for the details area: a note, a recorded reason, a message
 received. `hidden` is for a column only a system writer or an integration reads and writes: a
-token, a correlation key. Like `visibleWhen`, `hidden` is presentation and writes nothing away: the
-stored value stays, and every read serves it.
+token, a correlation key. A hidden field is out of the user's reach, not out of the data: the stored
+value stays, every read serves it, and a system writer sets it.
 
 > **Normative.**
 > Under `placement: main` a conforming generator MUST render a read-only field in the main area of
