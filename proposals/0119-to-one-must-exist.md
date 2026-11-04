@@ -43,9 +43,8 @@ No new key. The rule holds for every to-one a file already declares:
 ## Edge rules
 
 - A relation declaring `whenTargetDeleted: keep` is exempt: its reference outlives its target by
-  declaration (a reversal names a source that is already gone). `keep` is not among the values
-  1.11 lists for `whenTargetDeleted`; the exemption applies where a version of the format declares
-  it.
+  declaration (a reversal names a source that is already gone). `keep` is introduced by
+  [0126](0126-when-target-deleted-keep-and-reversal-on-delete.md).
 - A target whose model is not deployed is let through, with a warning.
 - The check is in the generated application, never a database constraint.
 - Not covered: a targeted single-column write of a to-one key (a workflow setter writing it by name),
@@ -60,7 +59,9 @@ behaviour, tracked in the 1.11 "states precisely" checklist.
 ## Specification text
 
 **Anchor:** Relations & multi-model > relations > Relation attributes, appended after the
-`whenTargetDeleted` paragraph and its normative block.
+`whenTargetDeleted` paragraph and its normative block. Folded after
+[0126](0126-when-target-deleted-keep-and-reversal-on-delete.md), which adds `whenTargetDeleted: keep`
+to that paragraph.
 
 A to-one names a record that exists. A create or an update that names a target with no row behind it
 is refused, whichever model owns the target.
@@ -72,5 +73,7 @@ is refused, whichever model owns the target.
 > before it stores the file. The check is in the generated application, never a database
 > constraint. It MUST run before a document number is drawn, so a refused create spends no number.
 > An update MUST be asked only about the references it changes, so a row stored earlier stays
-> editable. A relation declaring `whenTargetDeleted: keep` is exempt, because its reference outlives
-> its target by declaration; a target whose model is not deployed is let through with a warning.
+> editable. A relation declaring `whenTargetDeleted: keep`
+> ([0126](0126-when-target-deleted-keep-and-reversal-on-delete.md)) is exempt, because its reference
+> outlives its target by declaration; a target whose model is not deployed is let through with a
+> warning.
