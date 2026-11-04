@@ -75,7 +75,7 @@ implementation: https://github.com/eclipse-dirigible/dirigible/pull/7673.
 
 ## Specification text
 
-Two pieces of text, each at its own anchor.
+Three pieces of text, each at its own anchor.
 
 **Anchor:** Relations & multi-model > Relation attributes, the `whenTargetDeleted` bullet and its
 **Normative** block (0064), amended.
@@ -127,6 +127,13 @@ was posted is still netted to zero.
 > errors. `onDelete` on an entry without `reverses`, and an `onDelete` naming an entity other than
 > the sibling's source, MUST be reported as authoring errors. A `reverses` entry bound to a
 > transition is unaffected.
+
+**Anchor:** Relations & multi-model > Relation attributes, the "A to-one names a record that exists"
+paragraph and its **Normative** block (0119, released in 1.12, which folded without this sentence
+because `keep` did not exist yet), amended by appending to the block:
+
+> A relation declaring `whenTargetDeleted: keep` is exempt, because its reference outlives its target
+> by declaration.
 
 ## DSL index
 
