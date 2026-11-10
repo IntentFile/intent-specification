@@ -2,7 +2,7 @@
 
 - **Status:** draft
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/8564
-- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/PLATFORM_PR
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8578
 
 ## The problem
 
@@ -53,7 +53,7 @@ generation.
 ## Prior art / workarounds
 
 None; the raw value was printed, or every boolean read Yes / No. Reference implementation:
-https://github.com/eclipse-dirigible/dirigible/pull/PLATFORM_PR.
+https://github.com/eclipse-dirigible/dirigible/pull/8578.
 
 ## Specification text
 
