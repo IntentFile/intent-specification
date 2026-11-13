@@ -56,16 +56,20 @@ permissions:
   its copy, creates none.
 - The link carries a random token that has nothing to do with any identifier of the record. The
   application stores only a hash of it and discloses the link once, when it is created.
-- Opening the link serves the stored file of the record's newest `copy` entry and nothing else:
-  never the live record, a new render, another file of the record or a listing.
+- A link serves one stored file, fixed when the link is created: the record's newest `copy` entry
+  at that moment. Opening the link serves that file and nothing else - never the live record, a
+  new render, another file of the record or a listing. A copy minted later, after an amendment,
+  is reached only through a new link.
+- A stored PDF is displayed inline; a stored file of any other type is sent as a download.
 - A token that does not answer - unknown, expired, revoked, created in another tenant, or whose
   file is gone - gets one and the same not-found answer.
 - A link can be revoked by a user holding one of the roles, with immediate effect. A link may
   expire, `expiresAfterDays` after it was created.
 - A record that leaves the `when` state loses its links for good, whoever moved it - a user, a
   process step, a schedule, a delete. Bringing the record back into the state revives none of them.
-- Creating, revoking and every opening of a link are recorded; the record's users see, per link,
-  how often and when it was last opened.
+- A link records who created it and when, who revoked it and when, how often it was opened and
+  when it was last opened. Every opening is recorded with its time, the link, the remote address
+  and the user agent.
 - A deployment may let a tenant switch sharing off and shorten the life of new links. Neither
   setting can enable sharing for an entity that does not declare it or lengthen a declared life.
 
@@ -159,9 +163,12 @@ intent. A link is a bearer credential - whoever holds it reads the document - wh
 > secure random source, independent of every identifier of the record. Only a hash of the token
 > MUST be stored, and the link MUST be disclosed once, in the answer that creates it.
 >
-> **Opening a link.** A link is opened at an unauthenticated URL carrying the token. The answer
-> MUST be the stored file of the record's newest `copy` entry and nothing else - never the live
-> record, a new render, another file or a listing. A token MUST resolve only within the tenant its
+> **Opening a link.** A link is opened at an unauthenticated URL carrying the token. The file a
+> link serves MUST be fixed when the link is created and MUST be an immutable stored copy - the
+> record's newest `copy` entry at that moment; a copy minted later is served only through a new
+> link. The answer MUST be that file and nothing else - never the live record, a new render,
+> another file or a listing. A PDF SHOULD be displayed inline, and a stored file of any other type
+> SHOULD be sent as a download. A token MUST resolve only within the tenant its
 > link was created in. A token that is unknown, expired, revoked, presented in another tenant, or
 > whose file no longer exists MUST receive one and the same not-found answer, indistinguishable
 > between those cases. Opening a link MUST NOT read or create an authenticated session and MUST
@@ -177,8 +184,9 @@ intent. A link is a bearer credential - whoever holds it reads the document - wh
 > whatever moved the record out of it, and MUST be revoked permanently: a record that returns to
 > the state MUST NOT regain it.
 >
-> **Audit and throttling.** Creating a link, revoking it and every opening of it MUST be recorded,
-> an opening with its time, the link, the remote address and the user agent. The record's users
+> **Audit and throttling.** An implementation MUST record who created a link and when, who
+> revoked it and when, and each opening of it with its time, the link, the remote address and the
+> user agent. The record's users
 > holding one of the `roles` MUST be able to see each link's state, expiry, number of openings and
 > last opening. The unauthenticated URL MUST be rate limited per remote address and per link, and
 > an address that repeatedly presents tokens that do not answer MUST be refused for a time.
