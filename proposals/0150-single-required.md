@@ -42,7 +42,9 @@ the last row, which must stay possible.
 
 - **Update.** A write that sets the flag `false` on its current holder is refused while no other row
   of the holder's scope holds it. The refusal is an invalid-input refusal naming the flag field, with
-  a message seeded in the translation catalog. The flag still moves the ordinary way: setting it on
+  one message shared by every such flag, seeded in the translation catalog and naming the entity and
+  the flag by their translated labels - so one translated entry answers it in the reader's language
+  for every entity, as the other field refusals are. The flag still moves the ordinary way: setting it on
   another row demotes the holder.
 - **Scope change.** A holder whose write moves it to another `per` scope gives the flag up in the scope
   it leaves; that write is refused the same way, unless the holder is the last row of that scope.
@@ -84,9 +86,9 @@ fields:
 
 > **Normative.**
 > For a `single` flag declaring `required: true`, a conforming generator MUST refuse, as invalid input
-> naming the flag field and with a message seeded in the translation catalog, a write that sets the
-> flag `false` on the row that stores it `true`, and a write that moves that row to another `per`
-> scope, unless another row of the scope it gives the flag up in holds the flag, or - for a move - no
+> naming the flag field and with a message seeded in the translation catalog that names the entity and
+> the flag by their translated labels, a write that sets the flag `false` on the row that stores it
+> `true`, and a write that moves that row to another `per` scope, unless another row of the scope it gives the flag up in holds the flag, or - for a move - no
 > other row remains in that scope. It MUST refuse the delete of that row the same way unless no other
 > row remains in its scope. It MUST NOT refuse a write that stores a row without the flag when the row
 > is not the holder, including the creation of a scope's first row, and MUST NOT set the flag on it.
