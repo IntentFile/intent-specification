@@ -53,6 +53,11 @@ the last row, which must stay possible.
   flag is not set on it automatically.
 - `required` combines with `per` and with either `onConflict`. A model declaring no `required` on a
   `single` flag generates exactly as before.
+- **The `onConflict: refuse` conflict is translated the same way.** The refusal of a write that takes
+  a flag another row of its scope holds stays a conflict (409), now naming the flag field, with one
+  message shared by every such flag (and one for a `per:` flag, naming the scope relation) seeded in
+  the translation catalog and naming the entity, the flag and the scope by their translated labels.
+  It used to be an English sentence with those names written into it.
 
 ## Edge rules
 
@@ -92,6 +97,10 @@ fields:
 > other row remains in that scope. It MUST refuse the delete of that row the same way unless no other
 > row remains in its scope. It MUST NOT refuse a write that stores a row without the flag when the row
 > is not the holder, including the creation of a scope's first row, and MUST NOT set the flag on it.
+> For a `single` flag declaring `onConflict: refuse`, the refusal of a write that sets the flag while
+> another row of its scope holds it MUST name the flag field and carry a message seeded in the
+> translation catalog that names the entity, the flag and - for a `per` flag - the scope relation by
+> their translated labels.
 > A model declaring no `required` on a `single` flag MUST generate byte-identical output.
 
 ## DSL index
