@@ -1,6 +1,6 @@
 # A setter step may write several members of one record in one write - set:
 
-- **Status:** draft
+- **Status:** released in [1.14](../versions/1.14.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/137, https://github.com/eclipse-dirigible/dirigible/issues/8042
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8055
 
