@@ -1,6 +1,6 @@
 # inbound: dedupe - a repeated identifier is acknowledged and skipped instead of dead-lettered
 
-- **Status:** draft
+- **Status:** released in [1.14](../versions/1.14.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/145, https://github.com/eclipse-dirigible/dirigible/issues/6852
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8088
 

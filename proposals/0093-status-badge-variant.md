@@ -1,6 +1,6 @@
 # A status badge takes its colour from the seed row - `stage` colours it, an optional `variant` overrides it
 
-- **Status:** draft
+- **Status:** released in [1.14](../versions/1.14.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/154, https://github.com/eclipse-dirigible/dirigible/issues/8373
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8380
 

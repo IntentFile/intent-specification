@@ -1,6 +1,6 @@
 # A reference may outlive its target - `whenTargetDeleted: keep` - and a reversal bound to the source's delete mirrors the original's stored lines
 
-- **Status:** draft
+- **Status:** released in [1.14](../versions/1.14.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/205, https://github.com/eclipse-dirigible/dirigible/issues/7634
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7673
 - **Amends:** [0064 - when the target is deleted](0064-when-target-deleted.md), [0075 - an `onCreate` posting follows its source](0075-on-create-posting-follows-its-source.md)
