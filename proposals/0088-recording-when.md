@@ -1,6 +1,6 @@
 # Recording when: `{now}` in a `setField` step, and `stampOn: { status }` on a timestamp or date field
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/149, https://github.com/eclipse-dirigible/dirigible/issues/7873, https://github.com/eclipse-dirigible/dirigible/issues/7874
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7917 (`{now}`), https://github.com/eclipse-dirigible/dirigible/pull/7918 (`stampOn: { status }`)
 

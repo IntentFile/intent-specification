@@ -1,6 +1,6 @@
 # A notify block takes cc and bcc, and a process step may send to a recipient a step worked out
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/132, https://github.com/eclipse-dirigible/dirigible/issues/7935, https://github.com/eclipse-dirigible/dirigible/issues/7938
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7937, https://github.com/eclipse-dirigible/dirigible/pull/7940
 

@@ -1,6 +1,6 @@
 # A ledger report lists one account's lines with the opening balance, a running balance and the closing balance - `kind: ledger`
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/143, https://github.com/eclipse-dirigible/dirigible/issues/7887
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7898
 

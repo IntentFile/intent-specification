@@ -1,6 +1,6 @@
 # `normalize` brings a string field to its stored form before `pattern` and `checks` read it
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/148, https://github.com/eclipse-dirigible/dirigible/issues/7726
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7730
 

@@ -1,6 +1,6 @@
 # Blank is Unicode-aware: a no-break or zero-width space alone is no value
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/163, https://github.com/eclipse-dirigible/dirigible/issues/8110
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8466
 

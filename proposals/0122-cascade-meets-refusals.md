@@ -1,6 +1,6 @@
 # A cascade meets the cascaded row's own refusals
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/163, https://github.com/eclipse-dirigible/dirigible/issues/8114
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8424
 

@@ -1,6 +1,6 @@
 # A report buckets open documents by days past due as of a report date - `aging:`
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/142, https://github.com/eclipse-dirigible/dirigible/issues/7888
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7896
 

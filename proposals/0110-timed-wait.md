@@ -1,6 +1,6 @@
 # A wait step may park for a duration, so a process polls by a loop, not by a retry
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/136, https://github.com/eclipse-dirigible/dirigible/issues/8040, https://github.com/eclipse-dirigible/dirigible/issues/8106
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8045, https://github.com/eclipse-dirigible/dirigible/pull/8451
 

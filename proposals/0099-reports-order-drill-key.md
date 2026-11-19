@@ -1,6 +1,6 @@
 # Reports: a row order, relative-period filters, rows that open their records, and a relation dimension grouped by key
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/160, https://github.com/eclipse-dirigible/dirigible/issues/8435, https://github.com/eclipse-dirigible/dirigible/issues/8374, https://github.com/eclipse-dirigible/dirigible/issues/8102
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8457, https://github.com/eclipse-dirigible/dirigible/pull/8385, https://github.com/eclipse-dirigible/dirigible/pull/8476
 

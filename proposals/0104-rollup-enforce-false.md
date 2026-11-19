@@ -1,6 +1,6 @@
 # A roll-up keeps its balance against a capacity it does not enforce - `enforce: false`
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/166, https://github.com/eclipse-dirigible/dirigible/issues/7904
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8475
 - **Amends:** [0066 - a roll-up counts the rows it is told to, and its ceiling is enforced at a status](0066-rollup-where-and-guard-at.md)

@@ -1,6 +1,6 @@
 # The post an amended source rewrites is its live one: a rejected or reversed entry is retired and a new draft is created
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/163, https://github.com/eclipse-dirigible/dirigible/issues/7959
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8438
 - **Amends:** [0032 - an amended source rewrites its posting](0032-amended-source-rewrites-its-posting.md), [0075 - an `onCreate` posting follows its source](0075-on-create-posting-follows-its-source.md)
