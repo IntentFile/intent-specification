@@ -1,6 +1,6 @@
 # A role the file authors is a role a person can be given
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/8728
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8731
 

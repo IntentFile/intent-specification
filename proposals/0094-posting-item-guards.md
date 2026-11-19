@@ -1,6 +1,6 @@
 # A posting item guard takes the term grammar, an unreadable one is an authoring error, and a rule column is required only where the line that reads it books
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/155, https://github.com/eclipse-dirigible/dirigible/issues/7993, https://github.com/eclipse-dirigible/dirigible/issues/7649
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/7996, https://github.com/eclipse-dirigible/dirigible/pull/7680
 - **Amends:** [0053 - a row outside every tuple is not guarded, and a rule match is a literal that says something](0053-tuple-less-rows-and-empty-rule-matches.md)

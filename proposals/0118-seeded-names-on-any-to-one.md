@@ -1,6 +1,6 @@
 # A seeded name resolves on any to-one relation of the record
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/163, https://github.com/eclipse-dirigible/dirigible/issues/8015, https://github.com/eclipse-dirigible/dirigible/issues/8057
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8016, https://github.com/eclipse-dirigible/dirigible/pull/8059
 

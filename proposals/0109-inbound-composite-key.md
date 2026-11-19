@@ -1,6 +1,6 @@
 # inbound: a lookup by a composite business key - by: [customer.code, plan.code], from: [customerCode, planCode]
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/135, https://github.com/eclipse-dirigible/dirigible/issues/8033
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8035
 

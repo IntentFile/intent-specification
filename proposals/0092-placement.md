@@ -1,6 +1,6 @@
 # Where a field sits on the record page, or on no page - `placement: main | details | hidden`
 
-- **Status:** draft
+- **Status:** released in [1.13](../versions/1.13.md)
 - **Issue:** https://github.com/IntentFile/intent-specification/issues/153, https://github.com/eclipse-dirigible/dirigible/issues/8369, https://github.com/eclipse-dirigible/dirigible/issues/8370
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8384
 
