@@ -2,7 +2,7 @@
 
 - **Status:** proposed
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/8777
-- **Implementation:** (reference implementation PR, linked on the proposal PR)
+- **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8847
 
 ## The problem
 
