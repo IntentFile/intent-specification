@@ -1,6 +1,6 @@
 # A message is written in the language it is delivered in
 
-- **Status:** draft
+- **Status:** proposed
 - **Issue:** https://github.com/eclipse-dirigible/dirigible/issues/8787
 - **Implementation:** https://github.com/eclipse-dirigible/dirigible/pull/8849
 
